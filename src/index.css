@@ -1,0 +1,174 @@
+/* index.css — Neon Futuristic Dark Theme */
+
+/* Import a sci‑fi font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+  --bg: #000000;
+  --fg: #e0e0e0;
+  --neon-pink: #ff00e0;
+  --neon-blue: #00e9ff;
+  --neon-green: #39ff14;
+  --radius: 0.75rem;
+  --spacing: 1rem;
+  --transition: 0.3s ease-in-out;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.6;
+}
+a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--neon-pink);
+}
+
+/* Neon Text Effect */
+.neon {
+  color: var(--neon-pink);
+  text-shadow:
+    0 0 5px var(--neon-pink),
+    0 0 20px var(--neon-pink),
+    0 0 30px var(--neon-blue);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+
+/* Navbar */
+nav {
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  padding: 1rem var(--spacing);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--neon-blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav button {
+  background: transparent;
+  border: 2px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+nav button:hover {
+  background: var(--neon-green);
+  color: var(--bg);
+}
+nav ul {
+  display: flex;
+  gap: var(--spacing);
+}
+nav ul a,
+nav ul button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+nav ul a:hover,
+nav ul button:hover {
+  background: var(--neon-blue);
+  color: var(--bg);
+}
+
+/* Cards */
+.card {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--neon-blue);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow:
+    0 0 10px var(--neon-blue),
+    0 0 20px var(--neon-pink);
+  transition: transform var(--transition);
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Forms */
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: var(--spacing);
+  background: transparent;
+  border: 2px solid var(--neon-green);
+  color: var(--fg);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 8px var(--neon-pink);
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--neon-green);
+}
+
+/* Buttons */
+button, .btn {
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+  border: none;
+  color: var(--bg);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-blue);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+button:hover, .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-blue);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing) 0;
+}
+th, td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--neon-green);
+  text-align: left;
+}
+th {
+  background: var(--neon-blue);
+  color: var(--bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+  .container {
+    padding-inline: 0.5rem;
+  }
+}
